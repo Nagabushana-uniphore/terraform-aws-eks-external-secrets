@@ -8,6 +8,11 @@ variable "cluster_name" {
   description = "The name of the cluster"
 }
 
+variable "secrets_aws_region" {
+  type        = string
+  description = "AWS region where secrets are stored."
+}
+
 variable "cluster_identity_oidc_issuer" {
   type        = string
   description = "The OIDC Identity issuer for the cluster."
