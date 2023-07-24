@@ -11,6 +11,10 @@ resource "helm_release" "external_secrets" {
     name  = "serviceAccount.annotations.eks\\.amazonaws\\.com/role-arn"
     value = aws_iam_role.external_secrets[0].arn
   }
+  set {
+    name  = "env.AWS_REGION"
+    value = var.secrets_aws_region
+   }
 
   values = [
     yamlencode(var.settings)
